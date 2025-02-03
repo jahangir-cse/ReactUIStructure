@@ -1,0 +1,14 @@
+.login-section{
+    height: 100vh;
+}
+.login-section .card{
+    min-width: 340px;
+}
+.login-section .link-item {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.login-section .link-item:hover {
+    text-decoration: underline; /* Add underline on hover */
+}

@@ -1,0 +1,22 @@
+{
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "productId": "123"
+        },
+        "dev": {
+            "host": "http://localhost:5104",
+            "token": "CfDJ8P870YhOmjJPh0PPwK8Xn6s5aV8vkxIu-jIHDuWPkd_Qr5cK8ZbO12N8SVgo-SgDmIrT-RH2shC3IDETpuCfxVtvaKcIHAfubjc4oS1hUS1XZzeqh7xZG-nPLZCdI6gOVcWtz6SlhcSpvjbuWO9xq1mL6S5vT0p7eDtAfiRchcpgmz_mrmAmpc7Yp43KQpKf3ofAH95IpyZjWT7pWBARaAo70Qa-raEVdM2pvX9Q4uiLLK7FPTMUrvQjhYZIsbD86hvxt7zwsEENehZehDTcAX7VGZ_DD21yCHEMfrz21Zsclb-dWkhky7XhhVBB3pSxORZou3gYs3ProztqW8M9XbEOz1LH1iHz-TFHMhb9Rd17uSM7SfOnxemVJh_XoZ4sBR4V0sTZsvhZY5KFFIXBEwVTj1gQEKArUrj6ZfoPC77HhwueS8NZ1Fn8fU1ug0ms4okDlAYMe8TtsuM7AL-bHA955QR215L9Dhx7iZca4ODL4jKIbMi35YsfgkHvWDaRrum2oUfNMZJEz1LKy3K8636wfm6-qTUR8SoFqutGwxFsQYxyyrpFnUBAm5i7OZ7lmx0hCvdqJsK_0WvHQ0ZXil36mJFRos9JeoJW38IvKY4PeYUsltr0Hf9vOKHdeWMbzU0pedTIAbiLysICKV3Ro8N4M9rabwhczHhWAgfr_VVtv86-3Pxe2Y7DBZY9rpDw-w"
+        },
+        "staging": {
+            "token": "ey.."
+        },
+        "prod": {
+            "token": "ey.."
+        }
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "[csharp]": {
+        "editor.formatOnSaveMode": "file"
+    }
+}

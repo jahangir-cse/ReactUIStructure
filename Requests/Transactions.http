@@ -1,0 +1,48 @@
+# Add Balance
+POST {{host}}/transaction/addbalance
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "Amount": 1510,
+    "FinancialEntityId": "48bb944c-15c4-4d3a-b0f3-3c1fee1bd4ef",
+    "TransactionId": "01912936-9bac-1c41-7b63-3c0e2719de96" 
+}
+
+### Check Balance
+GET {{host}}/transaction/checkbalance
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### Sell Offer
+POST {{host}}/transaction/selloffer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "OfferId": "ae58713c-3395-483e-9695-ced5e60a3c68",
+    "FinancialEntityId": "e95e88b8-8420-47dc-9271-43210090bb7c",
+    "MobileNo": "01710870812",
+    "Pin": "123456"
+}
+
+### Get All Transactions
+GET {{host}}/transaction/getall?page=1&pageSize=10
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### Get Transaction By TransactionId
+GET {{host}}/transaction/GetByTransactionId/01J89JQKCS521T6NZ3EH65078Y
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### Recharge
+POST {{host}}/transaction/recharge
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "Amount": 1000,
+    "FinancialEntityId": "e95e88b8-8420-47dc-9271-43210090bb7c",
+    "MobileNo": "01710870812"
+}

@@ -1,0 +1,33 @@
+# Create
+POST {{host}}/notice
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "Title": "Balance Updated",
+    "Description": "Balance is updated for this Operator",
+    "NoticeType": 25
+}
+
+### Update
+PUT {{host}}/notice/749da47f-66e4-443b-bff5-77415ffb6e64
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "Title": "Balance Updated23",
+    "Description": "Balance is updated for this Operator",
+    "NoticeType": 25
+}
+
+#### Delete
+DELETE {{host}}/notice/749da47f-66e4-443b-bff5-77415ffb6e64
+Authorization: Bearer {{token}}
+
+#### Get All
+GET {{host}}/notice/getall
+Authorization : Bearer {{token}}
+
+#### Get By Id
+GET {{host}}/notice/c3dfadf9-07ae-40f0-a93a-bb22eb340d80
+Authorization : Bearer {{token}}

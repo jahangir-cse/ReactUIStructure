@@ -1,0 +1,91 @@
+.main-body {
+    width: calc(100% - 250px);
+}
+main {
+    min-height: 85.2vh;
+}
+.sidebar {
+    background: linear-gradient(180deg, rgb(5, 39, 103) 0%, #5102b9 70%);
+    width: 250px;
+    min-height: 94vh;
+    border-top: 1px solid #fff;
+    padding-right: 0px;
+}
+    .sidebar a{
+        cursor: pointer;
+    }
+    .sidebar .navbar-brand {
+        font-size: 1.1rem;
+    }
+.sidebar .bi {
+    display: inline-block;
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    top: -1px;
+    background-size: cover;
+}
+.sidebar .nav-item {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar .nav-item:first-of-type {
+    padding-top: 1rem;
+}
+
+.sidebar .nav-item:last-of-type {
+    padding-bottom: 1rem;
+}
+
+.sidebar .nav-item a {
+    color: #d7d7d7;
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: initial;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.sidebar .nav-item a.active {
+    background-color: rgba(255,255,255,0.37);
+    color: white;
+}
+
+.sidebar .nav-item a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.sidebar .collapse {
+    display: block;
+}
+    .sidebar .nav-scrollable {
+        max-height: 86vh;
+        overflow-y: auto;
+    }
+@media (max-width: 991px) {
+    .main-body {
+        width: 100%;
+    }
+    .sidebar {
+        display: none;
+        width: 0px;
+    }
+
+        .siderbar-parent.active-menu .sidebar {
+            display: block;
+            width: 250px;
+            position: absolute;
+            z-index: 100;
+            top: 50px;
+        }
+
+        .sidebar .nav-scrollable {
+            height: calc(100vh - 3.5rem);
+            overflow-y: auto;
+        }
+}

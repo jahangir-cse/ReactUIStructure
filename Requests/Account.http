@@ -1,0 +1,51 @@
+# Create Account
+POST {{host}}/account
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "Password": "MAriful1!",
+    "Name": "Hasanur Rayhan",
+    "MobileNumber": "01710870814",
+    "NID": "1234567890123",
+    "Address": "123 Main St",
+    "Level": "Basic",
+    "Pin": "1234",
+    "ReferencedBy": "96dfac40-1dbe-4cd3-bdcf-83cdf6fbff3c"
+}
+
+### Get Account By Id
+GET {{host}}/account/bb4e8630-37a2-41cf-9584-ae6c4d946d42
+Authorization: Bearer {{token}}
+
+### Get Own Account Info
+GET {{host}}/account
+Authorization: Bearer {{token}}
+
+### My Users
+GET {{host}}/account/MyUsers
+Authorization: Bearer {{token}}
+
+### Get All Users
+GET {{host}}/account/GetAll
+Authorization: Bearer {{token}}
+
+### Update Account
+PUT {{host}}/account/96dfac40-1dbe-4cd3-bdcf-83cdf6fbff3c
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "Password": "SecurePassword123!",
+    "Name": "John Doe Updated",
+    "MobileNumber": "0987654321",
+    "NID": "1234567890123",
+    "Address": "456 Elm St",
+    "Level": "Premium",
+    "Pin": "5678",
+    "ReferencedBy": null
+}
+
+### Delete Account
+DELETE {{host}}/account/a542c8cb-9234-4bf7-b0d6-257c8eb7ec04
+Authorization: Bearer {{token}}

@@ -1,0 +1,55 @@
+# Create
+POST {{host}}/financialentity
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "Name": "Gp",
+    "Type": "Operator",
+    "AccountNumber": "1234567890",
+    "ImageUrl": "https://www.logo.wine/a/logo/BKash/BKash-Icon2-Logo.wine.svg",
+    "Remarks": ""
+}
+
+### Update
+PUT {{host}}/financialentity/41d8942d-6327-47dc-b293-08dcb7137f30
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "Name": "Dummy Bank Updated",
+    "Type": "Operator",
+    "AccountNumber": "1234567890",
+    "ImageUrl": "https://example.com/gp-logo-updated.png",
+    "Remarks": ""
+}
+
+#### Delete
+DELETE {{host}}/financialentity/71819626-d451-4a19-b5da-e84e34600db6
+Authorization: Bearer {{token}}
+
+#### Get Paginated
+GET {{host}}/financialentity/getpaginated?page=1&pageSize=10
+Authorization : Bearer {{token}}
+
+#### Get All
+GET {{host}}/financialentity/getall
+Authorization : Bearer {{token}}
+
+#### Get By Id
+GET {{host}}/financialentity/ee7c5a85-ad6a-4859-bdd7-20b76464bcd1
+Authorization : Bearer {{token}}
+
+#### Get Financial Entity Types
+GET {{host}}/financialentity/getfinancialentitytypes
+Authorization : Bearer {{token}}
+
+#### Get Operators
+GET {{host}}/financialentity/getoperators
+Authorization : Bearer {{token}}
+
+#### Get Banks
+GET {{host}}/financialentity/getbanks
+Authorization : Bearer {{token}}
+
+

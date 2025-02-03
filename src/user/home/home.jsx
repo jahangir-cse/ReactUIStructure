@@ -1,12 +1,9 @@
 import React from "react";
-import Notice from "../notice/notice";
-import Services from "../services";
-import Slider from "../slider/slider";
-import ShowBalance from "../balance/showBalance";
+import Weather from "../weather/weather";
 
 const Home = () => {
   return (
-    <><Notice /><ShowBalance /><Services /><Slider /></>
+    <><Weather /></>
   );
 };
 

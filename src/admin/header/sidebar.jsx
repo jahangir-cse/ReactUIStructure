@@ -30,7 +30,7 @@ const Sidebar = () => {
                             className={`nav-link ${activeItem === 'bundle' ? 'active' : ''}`}
                             onClick={() => handleActive('bundle')}
                         >
-                            <i className="bi bi-box-seam"></i> Manage Bundle
+                            <i className="bi bi-box-seam"></i> Manage Menu 1
                         </Link>
                     </div>
                     <div className="nav-item">
@@ -38,7 +38,7 @@ const Sidebar = () => {
                             className={`nav-link ${activeItem === 'financial' ? 'active' : ''}`}
                             onClick={() => handleActive('financial')}
                         >
-                            <i className="bi bi-images"></i> Manage Financial Entity
+                            <i className="bi bi-images"></i> Manage Menu 2
                         </Link>
                     </div>
                     <div className="nav-item">
@@ -46,7 +46,7 @@ const Sidebar = () => {
                             className={`nav-link ${activeItem === 'offer' ? 'active' : ''}`}
                             onClick={() => handleActive('offer')}
                         >
-                            <i className="bi bi-images"></i> Manage Offer
+                            <i className="bi bi-images"></i> Manage Menu 3
                         </Link>
                     </div>
                     <div className="nav-item">

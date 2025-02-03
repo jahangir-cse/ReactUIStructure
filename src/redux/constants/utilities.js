@@ -1,1 +1,1 @@
-export default BACKEND_URL = "https://localhost:7297/";
+export default BACKEND_URL = "https://localhost:7046/";

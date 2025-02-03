@@ -12,6 +12,7 @@ import NotFound from './NotFound';
 import UserBackLayout from './UserBackLayout';
 import AdminRoute from './AdminRoute';
 import Weather from './user/weather/weather';
+import Login from './shared/login/login';
 function App() {
 
   return (
@@ -25,6 +26,7 @@ function App() {
 
           <Route element={<UserLayout />}>
             <Route path="/weather" element={<Weather />} />
+            <Route path="/login" element={<Login />} />
           </Route>
 
           <Route element={<AdminRoute />}>

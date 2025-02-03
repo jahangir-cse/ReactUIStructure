@@ -20,6 +20,7 @@ body {
 }
 .main-body-content{
     padding-bottom: 70px;
+    min-height: calc(100vh - 120px);
 }
 h1, h2, h3, h4 {
     font-family: HindiShiliguriBold;
@@ -84,10 +85,6 @@ a {
     width: -webkit-fill-available;
     width: -moz-available;
 }
-/* .card .card-header img{
-    height: 220px;
-    width: 100%;
-} */
 .header {
     background: var(--primary-color);
     color: #fff;
@@ -130,67 +127,6 @@ a {
     border-top: 1px solid;
 }
 
-.slider-section .carousel-item {
-    min-height: 400px;
-    background-color: var(--primary-color);
-}
-
-.slider-section .carousel-item img {
-    width: 100%;
-    height: 400px;
-}
-
-.slider-section .carousel-item>div {
-    height: 400px;
-}
-
-.slider-section .carousel-indicators {
-    margin-bottom: -30px;
-}
-
-.slider-section .carousel-indicators [data-bs-target] {
-    width: 25px;
-    height: 10px;
-    border-bottom: 0px;
-    border-top: 0px;
-    border-radius: 10px;
-    background-color: #808080;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.slider-section .carousel-indicators [data-bs-target].active {
-    background-color: var(--primary-color);
-    width: 35px;
-}
-
-.recharge-section .btn-check-balance {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    font-size: 1.25rem;
-    display: flex;
-    align-items: center;
-    transition: 0.5s;
-}
-
-.recharge-section .btn-check-balance.active {
-    transition: 0.5s;
-    background-color: var(--primary-color);
-    color: #fff;
-}
-.recharge-section h6 {
-    font-size: 16px;
-}
-.recharge-section .custom-dropdown {
-    max-width: 70px;
-    height: 39px;
-    font-size: 15px;
-}
-
-.recharge-section .dropdown-menu {
-    right: 10px;
-}
-
 .profile-section .img-div {
     width: 100px;
     height: 100px;
@@ -213,32 +149,9 @@ a {
     height: 50px;
     cursor: pointer;
 }
-.notification-section .date{
-    width: 250px;
+.login-page {
+    min-height: calc(100vh - 130px);
 }
-.notification-section .bi-x-square{
-    line-height: 25px;
-}
-.register-section {
-    height: 100vh;
-}
-
-.register-section .card {
-    min-width: 340px;
-}
-
-.register-section .link-item {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.register-section .link-item:hover {
-    text-decoration: underline;
-}
-.history-section .amount {
-    min-width: 100px;
-}
-
 .footer {
     background: var(--primary-color);
     color: #fff;
@@ -248,26 +161,7 @@ a {
 .footer a {
     color: #fff;
 }
-.recharge-section.active {
-    position: fixed;
-    background: #b2c1dd;
-    z-index: 100;
-    top: 70px;
-    left: 0;
-    bottom: 60px;
-    right: 0;
-    max-width: 100%;
-    max-height: 100%;
-        overflow-y: auto;
-}
 
-.recharge-section>.container {
-    padding: 0px;
-}
-.recharge-section .operator-parent-div img {
-    width: 40px;
-    height: 40px;
-}
 .support-popup {
     position: fixed;
     bottom: 62px;
@@ -291,25 +185,5 @@ a {
 }
 
 @media (max-width: 560px) {
-    .service-section h5 {
-        font-size: 10px;
-    }
-
-    .slider-section .carousel-item {
-        min-height: 200px;
-    }
-
-    .slider-section .carousel-item img {
-        height: 200px;
-    }
-
-    .slider-section .carousel-item>div {
-        height: 200px;
-    }
-        .recharge-section .btn-check-balance {
-            font-size: 1rem;
-        }
-                                                                                                                                .history-section .account-info {
-                                                                                                                                    max-width: 165px;
-                                                                                                                                }
+    
 }

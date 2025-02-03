@@ -1,8 +1,9 @@
 export const ActionTypes = {
-    SIGN_IN: 'SIGN_IN',
-    SIGN_OUT: 'SIGN_OUT',
+    LOG_IN: 'LOG_IN',
+    LOG_OUT: 'LOG_OUT',
+    REGISTER: 'REGISTER',
     REFRESH_TOKEN: 'REFRESH_TOKEN',
-    SIGN_IN_ERROR: 'SIGN_IN_ERROR',
+    LOGIN_IN_ERROR: 'LOG_IN_ERROR',
 
     FETCH_WEATHERS: 'FETCH_WEATHERS',
 };

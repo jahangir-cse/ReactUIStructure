@@ -30,6 +30,15 @@ const Weather = () => {
                                         <>
                                             <div>
                                                 <h6 className="fw-bold">
+                                                    {item.date}
+                                                </h6>
+                                                <h5 className="">
+                                                    Temperature C : {item.temperatureC}
+                                                </h5>
+                                                <h5 className="">
+                                                    Temperature F : {item.temperatureF}
+                                                </h5>
+                                                <h6 className="">
                                                     {item.summary}
                                                 </h6>
                                             </div>         

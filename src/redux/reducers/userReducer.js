@@ -2,6 +2,7 @@ import { ActionTypes } from "../constants/action-types";
 
 const initialState = {
     items: [],
+    user: null,
     accessToken: null,
     refreshToken: null,
     expiredAt: null,
@@ -9,20 +10,41 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ActionTypes.LOG_IN:
+        case ActionTypes.FETCH_USERS:
             return { ...state, items: action.payload };
-        case ActionTypes.LOG_OUT:
+
+        case ActionTypes.CREATE_USER:
             return {
                 ...state,
-                accessToken: null,
+                items: [...state.items, action.payload]
             };
-        case ActionTypes.REFRESH_TOKEN:
+
+        case ActionTypes.UPDATE_USER:
             return {
                 ...state,
-                accessToken: action.payload.accessToken,
-                refreshToken: action.payload.refreshToken,
-                expiredAt: Date.now() + action.payload.expiresIn * 1000,
+                items: state.items.map(user =>
+                    user.id === action.payload.id ? action.payload : user
+                ),
             };
+
+        case ActionTypes.UPDATE_USER_PROFILE:
+            return {
+                ...state,
+                user: action.payload,
+            };
+
+        case ActionTypes.DELETE_USER:
+            return {
+                ...state,
+                items: state.items.filter(user => user.id !== action.payload),
+            };
+
+        case ActionTypes.GET_BY_NUMBER_USER:
+            return {
+                ...state,
+                user: action.payload,
+            };
+
         default:
             return state;
     }

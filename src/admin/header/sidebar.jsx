@@ -26,11 +26,11 @@ const Sidebar = () => {
             <div className="nav-scrollable">
                 <nav className="flex-column">
                     <div className="nav-item">
-                        <Link to={'/bundle'}
-                            className={`nav-link ${activeItem === 'bundle' ? 'active' : ''}`}
-                            onClick={() => handleActive('bundle')}
+                        <Link to={'/manageUser'}
+                            className={`nav-link ${activeItem === 'user' ? 'active' : ''}`}
+                            onClick={() => handleActive('user')}
                         >
-                            <i className="bi bi-box-seam"></i> Manage Menu 1
+                            <i className="bi bi-box-seam"></i> Manage User
                         </Link>
                     </div>
                     <div className="nav-item">

@@ -13,6 +13,7 @@ import UserBackLayout from './UserBackLayout';
 import AdminRoute from './AdminRoute';
 import Weather from './user/weather/weather';
 import Login from './shared/login/login';
+import ManageUser from './admin/user/manage';
 function App() {
 
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route element={<AdminRoute />}>
             <Route element={<AdminLayout />}>
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/manageUser" element={<ManageUser />} />
             </Route>
           </Route>
 

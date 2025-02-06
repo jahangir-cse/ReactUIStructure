@@ -6,6 +6,7 @@ export const SIGN_IN_ENDPOINT = `${apiHost}/api/Authentication/Login`;
 export const REFRESH_TOKEN_ENDPOINT = `${apiHost}/api/Authentication/refresh-token`; 
 
 export const GET_ALL_USER_ENDPOINT = `${apiHost}/api/Authentication/users`;
+export const GET_ALL_ROLE_ENDPOINT = `${apiHost}/api/Authentication/roles`;
 export const CREATE_USER_ENDPOINT = `${apiHost}/api/Authentication/Register`;
 export const UPDATE_USER_ENDPOINT = `${apiHost}/api/Authentication/update-user`;
 export const UPDATE_PROFILE_USER_ENDPOINT = `${apiHost}/api/Authentication/update-profile`;

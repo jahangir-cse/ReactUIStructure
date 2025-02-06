@@ -2,6 +2,7 @@ import { ActionTypes } from "../constants/action-types";
 import axios from "axios";
 import {
     GET_ALL_USER_ENDPOINT,
+    GET_ALL_ROLE_ENDPOINT,
     CREATE_USER_ENDPOINT,
     UPDATE_USER_ENDPOINT,
     UPDATE_PROFILE_USER_ENDPOINT,
@@ -14,17 +15,35 @@ export const fetchUsers = () => {
     return async (dispatch) => {
         try {
             const response = await axios.get(GET_ALL_USER_ENDPOINT);
-            if (response.data.flag) {
+            if (response.status === 200) {
                 dispatch({
                     type: ActionTypes.FETCH_USERS,
-                    payload: response.data.users,
+                    payload: response.data,
                 });
             }
-            console.log('response data', response.data);
             return response.data;
         } catch (error) {
             console.error("Error fetching users:", error);
             return { success: false, message: "Load user failed. Please try again." };
+        }
+    };
+};
+
+// Fetch all role
+export const fetchRoles = () => {
+    return async (dispatch) => {
+        try {
+            const response = await axios.get(GET_ALL_ROLE_ENDPOINT);
+            if (response.status === 200) {
+                dispatch({
+                    type: ActionTypes.FETCH_ROLES,
+                    payload: response.data,
+                });
+            }
+            return response.data;
+        } catch (error) {
+            console.error("Error fetching roles:", error);
+            return { success: false, message: "Load role failed. Please try again." };
         }
     };
 };
@@ -42,10 +61,10 @@ export const createUser = (userData) => {
                     },
                 }
             );
-            if (response.data.flag) {
+            if (response.status === 200) {
                 dispatch({
                     type: ActionTypes.CREATE_USER,
-                    payload: response.data.user,
+                    payload: response.data,
                 });
             }
             return response.data;
@@ -69,10 +88,10 @@ export const updateUser = (userData) => {
                     },
                 }
             );
-            if (response.data.flag) {
+            if (response.status === 200) {
                 dispatch({
                     type: ActionTypes.UPDATE_USER,
-                    payload: response.data.user,
+                    payload: response.data,
                 });
             }
             return response.data;
@@ -96,7 +115,7 @@ export const updateUserProfile = (userProfileData) => {
                     },
                 }
             );
-            if (response.data.flag) {
+            if (response.status === 200) {
                 dispatch({
                     type: ActionTypes.UPDATE_USER_PROFILE,
                     payload: response.data.user,
@@ -115,10 +134,10 @@ export const deleteUser = (id) => {
     return async (dispatch) => {
         try {
             const response = await axios.delete(DELETE_USER_ENDPOINT(id));
-            if (response.data.flag) {
+            if (response.status === 200) {
                 dispatch({
                     type: ActionTypes.DELETE_USER,
-                    payload: id,
+                    payload: response.data,
                 });
             }
             return response.data;
@@ -134,7 +153,7 @@ export const getUserByNumber = (number) => {
     return async (dispatch) => {
         try {
             const response = await axios.get(GET_BY_NUMBER_USER_ENDPOINT(number));
-            if (response.data.flag) {
+            if (response.status === 200) {
                 dispatch({
                     type: ActionTypes.GET_BY_NUMBER_USER,
                     payload: response.data.user,

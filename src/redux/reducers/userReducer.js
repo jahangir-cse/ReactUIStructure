@@ -2,6 +2,7 @@ import { ActionTypes } from "../constants/action-types";
 
 const initialState = {
     items: [],
+    roles: [],
     user: null,
     accessToken: null,
     refreshToken: null,
@@ -12,6 +13,9 @@ const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case ActionTypes.FETCH_USERS:
             return { ...state, items: action.payload };
+
+        case ActionTypes.FETCH_ROLES:
+            return { ...state, roles: action.payload };
 
         case ActionTypes.CREATE_USER:
             return {

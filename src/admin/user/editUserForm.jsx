@@ -7,15 +7,15 @@ const EditUserForm = ({ editFormData, handleChange, handleSubmit, error, errorCl
             {error && <div className={`alert ${errorClass}`}>{error}</div>}
             <div className="mb-3">
                 <label className="form-label">Phone Number</label>
-                <input type="number" name="mobilePhone" value={editFormData.mobilePhone} className="form-control" required disabled />
+                <input type="number" name="mobilePhone" value={editFormData.mobilePhone} className="form-control"  required disabled />
             </div>
             <div className="mb-3">
                 <label className="form-label">Name</label>
-                <input type="text" name="name" value={editFormData.name} onChange={(e) => handleChange(e, true)} className="form-control" required />
+                <input type="text" name="name" value={editFormData.name} onChange={(e) => handleChange(e, true)} className="form-control" placeholder="Enter name.." required />
             </div>
             <div className="mb-3">
                 <label className="form-label">Email</label>
-                <input type="text" name="email" value={editFormData.email} onChange={(e) => handleChange(e, true)} className="form-control" />
+                <input type="email" name="email" value={editFormData.email} onChange={(e) => handleChange(e, true)} className="form-control" placeholder="Enter email.." />
             </div>
             <div className="mb-3">
                 <label className="form-label">Role</label>

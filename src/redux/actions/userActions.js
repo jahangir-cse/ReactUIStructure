@@ -7,7 +7,8 @@ import {
     UPDATE_USER_ENDPOINT,
     UPDATE_PROFILE_USER_ENDPOINT,
     DELETE_USER_ENDPOINT,
-    GET_BY_NUMBER_USER_ENDPOINT
+    GET_BY_NUMBER_USER_ENDPOINT,
+    GET_USER_ENDPOINT
 } from "../constants/endpoints";
 
 // Fetch all users
@@ -156,12 +157,32 @@ export const getUserByNumber = (number) => {
             if (response.status === 200) {
                 dispatch({
                     type: ActionTypes.GET_BY_NUMBER_USER,
-                    payload: response.data.user,
+                    payload: response.data,
                 });
             }
             return response.data;
         } catch (error) {
             console.error("Error fetching user by number:", error);
+            return { success: false, message: "User not found. Please try again." };
+        }
+    };
+};
+//get logged in user
+export const getUser = (token) => {
+    return async (dispatch) => {
+        try {
+            const response = await axios.get(GET_USER_ENDPOINT(encodeURIComponent(token)), {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+            if (response.status === 200) {
+                dispatch({
+                    type: ActionTypes.GET_USER,
+                    payload: response.data,
+                });
+            }
+            return response.data;
+        } catch (error) {
+            console.error("Error fetching user:", error);
             return { success: false, message: "User not found. Please try again." };
         }
     };

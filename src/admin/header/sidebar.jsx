@@ -1,10 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./sidebar.css";
+import { getUser } from "../../redux/actions/userActions";
+import { useDispatch, useSelector } from 'react-redux';
 
 const Sidebar = () => {
     const [openDropdown, setOpenDropdown] = useState(null);
     const [activeItem, setActiveItem] = useState(null);
+    const [user, setUser] = useState(null);
+    const dispatch = useDispatch();
+
+    const token = localStorage.getItem('refreshToken');
+    const userData = useSelector((state) => state.users.user);
+    useEffect(() => {
+        if (token) {
+            const cleanedToken = token.replace(/(^"|"$)/g, '');
+            if (cleanedToken) {
+                dispatch(getUser(token));
+            }
+        }
+    }, [token, dispatch]);
+
+    useEffect(() => {
+        if (userData) {
+            setUser(userData);
+        }
+    }, [userData]);
+
     const toggleDropdown = (dropdownKey) => {
         setOpenDropdown(prevDropdown => (prevDropdown === dropdownKey ? null : dropdownKey));
     };
@@ -18,9 +40,16 @@ const Sidebar = () => {
     return (
         <div className='sidebar'>
             <div className="top-row p-3 navbar-dark">
-                <a className="navbar-brand">
-                    Admin
-                </a>
+                {user ? (
+                    <a className='navbar-brand'>
+                        <h6>{user.fullName}</h6>
+                        <h6 className='mb-0'>{user.mobilePhone}</h6>
+                    </a>
+                ) : (
+                    <>
+                        <a className='navbar-brand'>Guest</a>
+                    </>
+                )}
             </div>
             <hr className="text-white my-0" />
             <div className="nav-scrollable">

@@ -48,6 +48,11 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 user: action.payload,
             };
+        case ActionTypes.GET_USER:
+            return {
+                ...state,
+                user: action.payload,
+            };
 
         default:
             return state;

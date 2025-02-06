@@ -6,23 +6,23 @@ const CreateUserForm = ({ formData, handleChange, handleSubmit, error, errorClas
             {error && <div className={`alert ${errorClass}`}>{error}</div>}
             <div className="mb-3">
                 <label className="form-label">Full Name</label>
-                <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} className="form-control" required />
+                <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} className="form-control" placeholder="Enter name.." required />
             </div>
             <div className="mb-3">
                 <label className="form-label">Phone Number</label>
-                <input type="number" name="mobilePhone" value={formData.mobilePhone} onChange={handleChange} className="form-control" required />
+                <input type="number" name="mobilePhone" value={formData.mobilePhone} onChange={handleChange} className="form-control" placeholder="Enter phone number.." required />
             </div>
             <div className="mb-3">
                 <label className="form-label">Email</label>
-                <input type="text" name="email" value={formData.email} onChange={handleChange} className="form-control" />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} className="form-control" placeholder="Enter email.." />
             </div>
             <div className="mb-3">
                 <label className="form-label">Password</label>
-                <input type="password" name="password" value={formData.password} onChange={handleChange} className="form-control" required />
+                <input type="password" name="password" value={formData.password} onChange={handleChange} className="form-control" placeholder="Enter password.." required />
             </div>
             <div className="mb-3">
                 <label className="form-label">Confirm Password</label>
-                <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className="form-control" required />
+                <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className="form-control" placeholder="Enter confrim password.." required />
             </div>
             <div className="text-center">
                 <button type="submit" className="btn btn-primary">Save User</button>

@@ -148,10 +148,15 @@ const ManageUser = () => {
         }
     ];
 
-    const data = users.map((user, index) => ({
-        ...user,
-        index: index + 1
-    }));
+    let data = [];
+    if (Array.isArray(users)) {
+        data = users.map((user, index) => ({
+            ...user,
+            index: index + 1
+        }));
+    } else {
+        console.error('users is not an array');
+    }
 
     return (
         <div className="container-fluid py-3">

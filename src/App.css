@@ -168,7 +168,9 @@ a {
     left: 5px;
     right: 5px;
 }
-
+.not-found-page {
+    min-height: 100vh;
+}
 @media (max-width: 768px) {
     .header .input-div {
         position: absolute;

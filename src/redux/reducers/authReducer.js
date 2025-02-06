@@ -18,7 +18,9 @@ const authReducer = (state = initialState, action) => {
         case ActionTypes.SIGN_OUT:
             return {
                 ...state,
-                accessToken: null,  // Clear token from Redux state
+                accessToken: null,
+                refreshToken: null,
+                expiredAt: null,
             };
         case ActionTypes.REFRESH_TOKEN:
             return {

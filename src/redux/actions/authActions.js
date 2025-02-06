@@ -60,6 +60,7 @@ export const signInAction = (user) => {
 export const logoutAction = () => {
     return (dispatch) => {
         localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
         dispatch({
             type: ActionTypes.SIGN_OUT,
         });

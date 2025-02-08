@@ -78,6 +78,25 @@ a {
     max-height: 80vh;
     overflow: auto;
 }
+.table-responsive tr {
+    vertical-align: middle;
+}
+
+.table-responsive tr th {
+    text-align: center;
+}
+
+.table-responsive tr th:last-child {
+    min-width: 100px;
+}
+
+.table-responsive tr td:last-child {
+    text-align: center;
+}
+
+.table-responsive tr td .bi::before {
+    line-height: initial !important;
+}
 .react-datepicker-wrapper {
     width: 100%;
 }
@@ -111,7 +130,7 @@ a {
     font-size: 22px;
 }
 .navbar {
-    top: 70px;
+    top: 60px;
     left: 0;
     bottom: 61px;
     width: 250px;

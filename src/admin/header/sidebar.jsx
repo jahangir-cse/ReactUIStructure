@@ -1,31 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./sidebar.css";
-import { getUser } from "../../redux/actions/userActions";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
     const [openDropdown, setOpenDropdown] = useState(null);
     const [activeItem, setActiveItem] = useState(null);
-    const [user, setUser] = useState(null);
-    const dispatch = useDispatch();
-
-    const token = localStorage.getItem('refreshToken');
-    const userData = useSelector((state) => state.users.user);
-    useEffect(() => {
-        if (token) {
-            const cleanedToken = token.replace(/(^"|"$)/g, '');
-            if (cleanedToken) {
-                dispatch(getUser(token));
-            }
-        }
-    }, [token, dispatch]);
-
-    useEffect(() => {
-        if (userData) {
-            setUser(userData);
-        }
-    }, [userData]);
+    const user = useSelector((state) => state.users.user);
 
     const toggleDropdown = (dropdownKey) => {
         setOpenDropdown(prevDropdown => (prevDropdown === dropdownKey ? null : dropdownKey));
@@ -63,19 +44,19 @@ const Sidebar = () => {
                         </Link>
                     </div>
                     <div className="nav-item">
-                        <Link to={'/financial'}
-                            className={`nav-link ${activeItem === 'financial' ? 'active' : ''}`}
-                            onClick={() => handleActive('financial')}
+                        <Link to={'/manageSlider'}
+                            className={`nav-link ${activeItem === 'slider' ? 'active' : ''}`}
+                            onClick={() => handleActive('slider')}
                         >
-                            <i className="bi bi-images"></i> Manage Menu 2
+                            <i className="bi bi-images"></i> Manage Slider
                         </Link>
                     </div>
                     <div className="nav-item">
-                        <Link to={'/manageOffer'}
-                            className={`nav-link ${activeItem === 'offer' ? 'active' : ''}`}
-                            onClick={() => handleActive('offer')}
+                        <Link to={'/manageMedia'}
+                            className={`nav-link ${activeItem === 'media' ? 'active' : ''}`}
+                            onClick={() => handleActive('media')}
                         >
-                            <i className="bi bi-images"></i> Manage Menu 3
+                            <i className="bi bi-images"></i> Manage Media
                         </Link>
                     </div>
                     <div className="nav-item">

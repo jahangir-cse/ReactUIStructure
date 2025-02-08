@@ -1,5 +1,5 @@
 import React from "react";
-import Weather from "../weather/weather";
+import Weather from "../slider/slider";
 
 const Home = () => {
   return (

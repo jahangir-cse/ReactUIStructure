@@ -14,4 +14,15 @@ export const DELETE_USER_ENDPOINT = (id) => `${apiHost}/api/Authentication/delet
 export const GET_BY_NUMBER_USER_ENDPOINT = (number) => `${apiHost}/api/Authentication/user/${number}`;
 export const GET_USER_ENDPOINT = (token) => `${apiHost}/api/Authentication/get-user/${token}`;
 
-export const GET_ALL_WEATHER = `${apiHost}/WeatherForecast`;
+export const GET_ALL_SLIDER_ENDPOINT = `${apiHost}/api/Slide/all`;
+export const CREATE_SLIDER_ENDPOINT = `${apiHost}/api/Slide/add`;
+export const UPDATE_SLIDER_ENDPOINT = `${apiHost}/api/Slide/update`;
+export const DELETE_SLIDER_ENDPOINT = (id) => `${apiHost}/api/Slide/delete/${id}`;
+
+export const GET_ALL_MEDIA_ENDPOINT = `${apiHost}/api/Media/all`;
+export const CREATE_MEDIA_ENDPOINT = `${apiHost}/api/Media/add`;
+export const DELETE_MEDIA_ENDPOINT = (id) => `${apiHost}/api/Media/delete/${id}`;
+
+export const GET_SETTINGS_ENDPOINT = `${apiHost}/api/Settings/all`;
+export const CREATE_SETTING_ENDPOINT = `${apiHost}/api/Settings/add`;
+export const UPDATE_SETTING_ENDPOINT = `${apiHost}/api/Settings/update`;

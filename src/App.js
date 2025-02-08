@@ -11,12 +11,14 @@ import UserLayout from './UserLayout';
 import NotFound from './NotFound';
 import UserBackLayout from './UserBackLayout';
 import AdminRoute from './AdminRoute';
-import Weather from './user/weather/weather';
+import Slider from './user/slider/slider';
 import Login from './shared/login/login';
 import ManageUser from './admin/user/manage';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser, fetchRoles } from "./redux/actions/userActions";
+import ManageSlider from './admin/slider/manage';
+import ManageMedia from './admin/media/media';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -46,7 +48,7 @@ function App() {
 
   useEffect(() => {
     if (selectedRole) {
-      console.log('selectedRole', selectedRole);
+      //console.log('selectedRole', selectedRole);
     }
   }, [selectedRole]);
 
@@ -59,7 +61,7 @@ function App() {
 
           <Route element={<UserLayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/weather" element={<Weather />} />
+            <Route path="/slider" element={<Slider />} />
             <Route path="/login" element={<Login />} />
           </Route>
 
@@ -69,6 +71,8 @@ function App() {
               <Route element={<AdminLayout />}>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/manageUser" element={<ManageUser />} />
+                <Route path="/manageSlider" element={<ManageSlider />} />
+                <Route path="/manageMedia" element={<ManageMedia />} />
               </Route>
             </Route>
           )}

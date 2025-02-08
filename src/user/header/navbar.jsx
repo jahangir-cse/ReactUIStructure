@@ -2,27 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutAction } from '../../redux/actions/authActions';
+import { getUser } from "../../redux/actions/userActions";
 
 const Navbar = ({ show }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [user, setUser] = useState(null);
     const navigate = useNavigate();
+    const [user, setUser] = useState(null);
     const dispatch = useDispatch();
 
-    const accessToken = useSelector((state) => state.authStore.accessToken);
-    const userData = useSelector((state) => state.users.items);
-
+    const token = localStorage.getItem('refreshToken');
+    const userData = useSelector((state) => state.users.user);
     useEffect(() => {
-        if (accessToken) {
-            const cleanedToken = accessToken.replace(/(^"|"$)/g, '');
+        if (token) {
+            const cleanedToken = token.replace(/(^"|"$)/g, '');
             if (cleanedToken) {
+                dispatch(getUser(token));
                 setIsLoggedIn(true);
-                //dispatch(getUser());
             }
-        } else {
-            setIsLoggedIn(false);
         }
-    }, [accessToken, dispatch]);
+    }, [token, dispatch]);
 
     useEffect(() => {
         if (userData) {
@@ -39,12 +37,12 @@ const Navbar = ({ show }) => {
         <div className={`navbar p-0 position-fixed ${show ? '' : 'd-none'}`}>
             <ul className='list-unstyled h-100 w-100 overflow-y-auto'>
                 <li className='border-top-bottom'>
-                    <div className='profile d-middle'>
+                    <div className='profile'>
                         <div className='mx-2'>
                             {user ? (
                                 <>
-                                    <h6>{user.name}</h6>
-                                    <h6 className='mb-0'>{user.mobileNumber}</h6>
+                                    <h6>{user.fullName}</h6>
+                                    <h6 className='mb-0'>{user.mobilePhone}</h6>
                                 </>
                             ) : (
                                 <>
